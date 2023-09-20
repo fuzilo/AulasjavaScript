@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de Dados</title>
+    <Style>
+        body{
+            background-color: rgb(26, 26, 26);
+            color: blue;
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: blanchedalmond;
+        }
+    </Style>
+</head>
+<body>
+    <h3>O Novo Notion</h3>
+    <h3>Tratando Dados com JavaScript</h3>
+    <h4>Precisamos definir o tipo da variável</h4>
+    <Script>
+    var n = Number(window.prompt('Digite um numero de 1 a 5'))
+   
+        //soma
+        var soma= n+n
+        document.write(`<br>A soma de ${n} e ${n} é igual a ${soma}`)
+        //multiplicação
+        var multiplica= soma*n
+        document.write(`<br>A multiplicação de ${soma} e ${n} é ${multiplica}`)
+        //subtração
+        var subtra= multiplica-n
+        document.write(`<br>A subtração de ${multiplica} e ${n} é ${subtra}`)
+        //Potencia
+        var pot= subtra**n
+        document.write(`<br>A Potência de ${subtra} elevado a ${n} é ${pot}`)
+        //Divisão
+        var divs= pot/n
+        document.write(`<br>A divisão de ${pot} por ${n} é ${divs}`)
+        //resto da divisão
+        var rest= divs % n
+        document.write(`<br>O resto da divisão de ${divs}  por ${n} é ${rest}`)
+        //Operador de atribuição x3
+        rest += n
+        document.write(`<br> ${rest}`)
+        rest += n
+        document.write(`<br> ${rest}`)
+        rest += n
+        document.write(`<br> ${rest}`)
+
+
+        //2
+        //4
+        //6
+        //
+
+    
+
+    </Script>
+    
+
+
+</body>
+</html>

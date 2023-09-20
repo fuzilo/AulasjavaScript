@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores relacionais e ternários</title>
+    <style>
+        body {
+            background-color: #383232;
+            color:#d3caca;
+
+            font: normal;
+        }
+        strong{
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+<h3>Operadores Relacionais e Ternários em JavaScript</h3>
+
+<script>
+    var nome = window.prompt("Qual o seu nome?")
+    var idade = window.prompt("Qual sua idade?")
+    var hobby = window.prompt("Qual é o seu Hobby?")
+document.write(`Olá <strong>${nome}</strong>. `)
+    var resultado = idade >= 18 ? "maior" : "menor"
+document.write(`<br>Você é <strong>${resultado}</strong> de idade.`)
+
+//tratando o dado para ser utilizado no ternário, pois é case sensitive
+resultado = hobby.toLowerCase() != 'estudar'? 'não seria melhor estudar?' : 'que bom, continue assim'
+document.write(`<br> Seu hobby é <strong>${hobby.toLowerCase()} </strong>, ${resultado}. `)
+
+
+   var nasc = 2023 - idade
+    resultado = nasc >= 2000 ? "Você nasceu após o 3º milênio": "Você nasceu antes do 3º milênio"
+
+document.write(`<br> ${resultado}`)
+
+
+</script>
+    
+</body>
+</html>

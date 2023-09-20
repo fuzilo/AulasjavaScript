@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de Dados</title>
+    <Style>
+        body{
+            background-color: rgb(26, 26, 26);
+            color: rgb(239, 239, 240);
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: blanchedalmond;
+        }
+    </Style>
+</head>
+<body>
+    
+    <h3>Tratando Dados com JavaScript</h3>
+    <h4>Precisamos definir o tipo da variável</h4>
+    <Script>
+        var nome = window.prompt("Funcionário, digite o seu nome")
+
+        var venda = Number(window.prompt(`${nome}, digite o valor de vendas, sem pontos e centavos`))
+   
+  
+            // se valor de vendas for acima de 10.000 , informar que a meta foi atingida, caso contrário, o contrário
+            // exibir o valor formatadp
+        var meta = venda >= 10000 ? "foi atingida, parabéns" : "não foi atingida, esforce-se mais"
+
+        document.write(`${nome}, o valor total das vendas foi de ${venda.toLocaleString('pt-br', {style: 'currency', currency:'BRL'})}, a meta deste mês ${meta}. `)
+
+        
+        
+
+    
+
+    </Script>
+    
+
+
+</body>
+</html>

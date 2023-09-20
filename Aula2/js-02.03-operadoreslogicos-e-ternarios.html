@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores relacionais e ternários</title>
+    <style>
+        body {
+            background-color: #383232;
+            color:#d3caca;
+
+            font: normal;
+        }
+        strong{
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+<h3>OperadoresTernários em JavaScript</h3>
+
+<script>
+    var ano = Number(window.prompt("Digite a série do aluno (1 a 9)"))
+    var resultado = ano == 1 || ano == 9 ? 'VERMELHA' : 'AZUL'
+    document.write(`Categoria do aluno: ${resultado}`)
+
+    var media = Number(window.prompt("Digite a média do aluno"))
+    var resultado = media >= 4 && media <= 5.5 ? `fará` : "não fará"
+    document.write(`<br>Esse aluno ${resultado} a recuperação, pois teve média ${media}.`)
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    
+
+    <style>
+        div#area{
+            font: normal 20pt arial;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+
+        }
+
+    </style>
+
+<body>
+    <div id="area">
+<!-- <div id="area" !--onclick="clicar()" onmouseenter="entrar()" onmouseleave="sair()--!" > -->
+    interaja
+</div>
+
+<script>
+    var a=window.document.getElementById("area")
+
+
+        a.addEventListener('click',clicar)
+        a.addEventListener("mouseenter", entrar)
+        a.addEventListener("mouseleave", sair)
+    //começando a criar as funções que irão manipular
+
+    function clicar(){
+        a.innerText="Clicou!"
+        a.style.backgroundColor="red"
+
+    }
+
+    function entrar(){
+        a.innerText = "Entrou"
+    }
+
+    function sair(){
+        a.innerText = "Saiu!"
+        a.style.backgroundColor ="green"
+    }
+</script>
+
+</body>
+</html>

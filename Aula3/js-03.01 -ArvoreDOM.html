@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>
+    Iniciando os estudos com DOM
+</h1>
+
+<p>Aprendendo a usar o <strong>DOM  </strong> em JavaScrip </p>
+<p>Eu sou um parágrafo</p>
+
+<div id="msg"> eu sou uma Div</div>
+<div name="msg"> eu sou uma Div</div>
+<div class="msg"> eu sou uma Div</div>
+<div id="msg2"> eu sou uma Div</div>
+
+    <script>
+
+        var p0 = window.document.getElementsByTagName('p')[0]
+        var p1 = window.document.getElementsByTagName('p')[1]
+
+        //window.document.write(`<br> No 1º parágrafo está escrito assim: `+p0.innerHTML)
+        window.document.write(`<br> No 2º parágrafo está escrito assim: ` +p1.innerText)
+
+        var corpo = window.document.body
+        corpo.style.background = '#adadad'
+        p0.style.color = "yellow"
+
+
+        // Selecionando Elementos por ID
+        d = window.document.getElementById('msg')
+        d.innerText="Selecionando elementos pelo ID"
+        d.style.background="purple"
+
+        //selecionando elementos por nome
+
+        e= window.document.getElementsByName('msg')[0]
+        e.innerText="Selecionando Elementos por name"
+        e.style.background="blue"
+
+        //selecionando elementos por class
+        f=window.document.getElementsByClassName('msg')[0]
+        f.innerText="Selecionando Elementos por Class"
+        f.style.background="red"
+
+
+            
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
