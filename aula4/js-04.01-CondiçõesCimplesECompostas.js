@@ -32,9 +32,9 @@ console.log(`Agora são exatamente ${hora} horas e ${minutos} minutos`)
 
 if (hora>=0 && hora <= 4){
     console.log(`Agora são ${hora}:${minutos}. Boa Madrugada.`)
-} if (hora <= 12 && hora >4) {
+} else if (hora <= 12 && hora >4) {
     console.log(`Agora são ${hora}:${minutos}. Bom dia`)
-} if(hora >12 && hora <=18){
+} else if(hora >12 && hora <=18){
     console.log(`Agora são ${hora}:${minutos}. Boa tarde`)
 }else
 {

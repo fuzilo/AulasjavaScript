@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de Velocidade</title>
+</head>
+<body>
+    <h1>Radar de Velocidade</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="resultado">
+        Aqui vai o Resultado
+    </div>
+    
+    <script>
+        function calcular(){
+            var limite = 60
+            var velocidade = window.document.querySelector('input#txtvel')
+            var res = window.document.querySelector('div#resultado')
+            var vel = Number(velocidade.value)
+
+            res.innerHTML=`<p> Sua Velocidade atual é de <strong>${vel}</strong> Km/h`
+                if(vel>limite){
+                    res.innerHTML +=`<p>Você está acima do limite de velocidade</p>`
+                }else{
+                    res.innerHTML +=`<p>Você está dentro do limite de velocidade</p>`
+                }
+
+
+        }
+    </script>
+</body>
+</html>
