@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locadora de Veiculos</title>
+</head>
+<body>
+    <h1>Locadora Tupã Guará</h1>
+    <div>
+        <p>Escolha o Modelo</p>
+
+        <input type="radio" name="modeloCarro" value="1">Hatch Compacto</input>
+        <input type="radio" name="modeloCarro" value="2">Sedã Grande</input>
+        <input type="radio" name="modeloCarro" value="3">Esportivo</input>
+
+    </div>
+
+    <div>
+        <input type="number" name="qtd_dias" id="dias">
+
+    </div>
+    
+
+    <div > 
+        <input type="button" value="Verificar" onclick="verificar()">
+    </div>
+    
+    <div id="resultado">
+        asd
+
+    </div>
+
+    <script>
+
+        function verificar(){
+            var modelo = Number(window.document.querySelector('input[name="modeloCarro"]:checked').value)
+            var qtd_dias = window.document.querySelector('input#dias')
+            var dias = Number(qtd_dias.value)
+            var res = window.document.querySelector('div#resultado')
+            
+            var valor 
+            if (modelo[1].checked){
+                valor = 80
+            } else if(modelo[2].checked){
+                valor = 100
+            } else if(modelo[3]){
+                valor = 100
+            }
+
+            res.innerHTML =` ${modelo} ,${dias} ${valor}`
+
+
+        }
+
+        
+    </script>
+    
+</body>
+</html>
