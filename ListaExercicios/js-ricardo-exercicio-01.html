@@ -8,8 +8,51 @@
 <body>
     <p>Conversão de Moedas</p>
     <h1>Insira o seu salário</h1>
-    <input type="number" name="" id="">
+    <input type="number" name="txtsal" id="txtsal">
+    <br>
+    <div>
+        <input type="button" name="converter" id="converter" value = "Converter" onclick="converter()">
+        <input type="button" value="limpa" id="limpa" onclick="limpar()">
+
+    </div>
+
+    <div id="resultado">
+        Por favor, digite o seu salário para fazermos a conversão de valores 
+    </div>
+    
+<script>
+    var sal = window.document.querySelector('input#txtsal')
+    var resultado = window.document.querySelector(`div#resultado`)
+    
+    function converter(){
+        // var sal = window.document.querySelector('input#txtsal')
+        var salario = Number(sal.value)
+        
+        var dolar = salario*0.20
+        var dolarFormatado= dolar.toLocaleString('en-US',{style:'currency', currency:'USD'})
+
+        var euro =salario*0.19
+        var euroFormatado=euro.toLocaleString('en-US',{style:'currency',currency:'EUR'})
+
+        // var resultado = window.document.querySelector(`div#resultado`)
+
+        resultado.innerHTML = `<p>O seu salário em dólares equivale a: ${dolarFormatado} Dólares</p>`;
+        resultado.innerHTML += `<p>O seu salário em euros equivale a: ${euroFormatado} Euros</p>`;
+   
+        // <br>
+        // <p>O seu salário em euros equivale a: ${euro} euros</p>`
+    }
+    function limpar(){
+
+        sal.value=""
+        resultado.innerHTML = `Por favor, digite o seu salário para fazermos a conversão de valores`;
+
+    }    
 
     
+</script>
+
+
+
 </body>
 </html>
