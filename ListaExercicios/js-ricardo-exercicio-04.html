@@ -34,21 +34,43 @@
     <script>
 
         function verificar(){
+
+            var hatch = 80
+            var seda = 100
+            var esport = 300
+
             var modelo = Number(window.document.querySelector('input[name="modeloCarro"]:checked').value)
+
+            /*var modelo = Number(window.document.querySelector('input'))*/
+
             var qtd_dias = window.document.querySelector('input#dias')
             var dias = Number(qtd_dias.value)
             var res = window.document.querySelector('div#resultado')
-            var valor = ''
             
-            if (modelo[1].checked){
-                valor = 80
-            } else if(modelo[2].checked){
-                valor = 100
-            } else if(modelo[3]){
-                valor = 100
-            }
+            
+            switch(modelo){
 
-            res.innerHTML =` asdasd${modelo} ,${dias} ${valor}`
+                case 1:
+                    result = dias*hatch
+                    res.innerHTML=`O valor total será ${result}, por ${dias}`
+                    break
+                case 2:
+                    result =dias*seda
+                    res.innerHTML=`O valor total será ${result}, por ${dias}`
+                    break
+                case 3: 
+                    result = dias*esport  
+                    res.innerHTML=`O valor total será ${result}, por ${dias}` 
+                    break
+                default:
+                    res.innerHTML=`vamos selecionar um carro antes`
+                    break
+
+            }
+            
+ 
+
+            
 
 
         }
