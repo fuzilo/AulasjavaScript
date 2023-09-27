@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  Sistema de Análise e Ficalização de Alcançamento e Definição de Objetivos</h1>
+  <br>
+  <br>
+    
+
+    <input type="text" name="txtval" placeholder="Insira o faturamento" id="txtval">
+
+    <input type="button" value="Verificar Meta" id="vendas" onclick="verificar()">
+
+    <div id="resultado">
+        <br>
+        <h3><p>Instruções:   </p></h3>
+        <p>Insira o valor das vendas do mês, sem vírgulas ou pontos</p>
+        
+        <br>
+        <p>metas para o mês corrente: R$ 10.0000,00</p>
+
+
+    </div>
+
+    <script>
+
+        var nome = window.prompt(`Bem vindo ao Sistema de Análise e Fiscalização de Alcançamento e Definição de Objetivos.
+        Insira o seu nome`)
+
+        var res = window.document.querySelector('div#resultado')
+
+        function verificar(){
+        var vendas = window.document.querySelector('input#txtval')
+        var venda = Number(vendas.value)
+        
+            
+            var resultado = venda < 10000 ? `Não Atingiu a Meta`: `Atingiu a Meta, Parabéns` 
+
+            res.innerHTML=`<br><strong>${nome}</strong>, com base nas informações inseridas, você ${resultado}`
+            res.innerHTML +=`<br><br><br><input type="button" value="Verificar nova entrada" id="vendas" onclick="limpar()">`
+
+        }
+        
+        function limpar(){
+        var vendas = window.document.querySelector('input#txtval')
+        vendas.value=''
+        resultado.innerHTML = `Por favor, insira um novo valor para verificarmos novamente`;
+
+}  
+        
+
+
+
+
+    </script>
+
+
+</body>
+</html>
