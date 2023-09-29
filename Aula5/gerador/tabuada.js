@@ -6,7 +6,7 @@ function tabuada(){
     var c = 1
 
     tab.innerHTML=''
-    while(c<=90){
+    while(c<=10){
         var item = document.createElement('option')
         item.text=`${n} X ${c} = ${n*c}`
 

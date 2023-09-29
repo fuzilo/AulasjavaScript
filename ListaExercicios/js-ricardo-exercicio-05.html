@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<body>
+    <h1><p>Contador</p></h1>
+
+    <br>
+    Inicio
+    <br>
+    <input type="number" id="inicio">
+    <br>
+    Fim
+    <br>
+    <input type="number" id="fim">
+    <br>
+    Passo
+    <br>
+    <input type="text" id="passo">
+    <br>
+    <input type="button" value="Contar" onclick="contar()">
+
+
+    <div id="resultado">
+        Contando
+        4,5,6,7, fim.
+    </div>
+
+       <script>
+
+        function contar(){
+        var inicio = Number(window.document.querySelector('input#inicio').value)
+        var fim = +window.document.querySelector('input#fim').value
+        var passo = +window.document.querySelector('input#passo').value
+        var res=window.document.querySelector('div#resultado')
+
+        
+        while(inicio<=fim){
+                // var item = document.createElement('option')
+                // item.text=``
+        res.innerHTML+=`${inicio}`
+        inicio+=passo
+
+        }
+    }
+       </script> 
+</body>
+</html>
