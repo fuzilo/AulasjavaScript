@@ -1,64 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sistema de Análise e Fiscalização</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        #resultado {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-top: 20px;
+        }
+        #txtval {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #vendas {
+            display: block;
+            margin: 10px auto;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>  Sistema de Análise e Ficalização de Alcançamento e Definição de Objetivos</h1>
-  <br>
-  <br>
-    
-
-    <input type="text" name="txtval" placeholder="Insira o faturamento" id="txtval">
-
-    <input type="button" value="Verificar Meta" id="vendas" onclick="verificar()">
-
+    <h1>Sistema de Análise e Fiscalização de Alcançamento e Definição de Objetivos</h1>
     <div id="resultado">
-        <br>
-        <h3><p>Instruções:   </p></h3>
-        <p>Insira o valor das vendas do mês, sem vírgulas ou pontos</p>
-        
-        <br>
-        <p>metas para o mês corrente: R$ 10.0000,00</p>
-
-
+        <p><strong>Instruções:</strong></p>
+        <p>Insira o valor das vendas do mês, sem vírgulas ou pontos.</p>
+        <p>Metas para o mês corrente: R$ 10.000,00</p>
+       </div>
+       <div>
+        <input type="number" name="txtval" placeholder="Insira o faturamento" id="txtval">
+        <input type="button" value="Verificar Meta" id="vendas" onclick="verificar()">
     </div>
-
     <script>
+        var nome = window.prompt(`Bem-vindo ao Sistema de Análise e Fiscalização de Alcançamento e Definição de Objetivos. Insira o seu nome.`)
+        var resultado = window.document.querySelector('div#resultado');
 
-        var nome = window.prompt(`Bem vindo ao Sistema de Análise e Fiscalização de Alcançamento e Definição de Objetivos.
-        Insira o seu nome`)
+        function verificar() {
+            var vendas = window.document.querySelector('input#txtval');
+            var venda = Number(vendas.value);
+            var meta = 10000;
 
-        var res = window.document.querySelector('div#resultado')
+            var mensagem = venda < meta ? "Não Atingiu a Meta" : "Atingiu a Meta, Parabéns";
 
-        function verificar(){
-        var vendas = window.document.querySelector('input#txtval')
-        var venda = Number(vendas.value)
-        
-            
-            var resultado = venda < 10000 ? `Não Atingiu a Meta`: `Atingiu a Meta, Parabéns` 
-
-            res.innerHTML=`<br><strong>${nome}</strong>, com base nas informações inseridas, você ${resultado}`
-            res.innerHTML +=`<br><br><br><input type="button" value="Verificar nova entrada" id="vendas" onclick="limpar()">`
-
+            resultado.innerHTML = `<br><strong>${nome}</strong>, com base nas informações inseridas, você ${mensagem}`;
+            resultado.innerHTML += `<br><br><input type="button" value="Verificar nova entrada" id="vendas" onclick="limpar()">`;
         }
-        
-        function limpar(){
-        var vendas = window.document.querySelector('input#txtval')
-        vendas.value=''
-        resultado.innerHTML = `Por favor, insira um novo valor para verificarmos novamente`;
 
-}  
-        
-
-
-
-
+        function limpar() {
+            var vendas = window.document.querySelector('input#txtval');
+            vendas.value = '';
+            resultado.innerHTML = `Por favor, insira um novo valor para verificarmos novamente`;
+        }
     </script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
