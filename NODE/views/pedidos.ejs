@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos 8-d</title>
+</head>
+<body>
+    
+    <h1>Página de Pedidos</h1>
+    <p>Serão Adicionados os Pedidos</p>
+
+    <h4>Produtps:</h4>
+    <table border="1" align="center">
+        <tr>
+            <th width="120 px">Nome</th>
+            <th width=" 120 px">Preço</th>
+
+        </tr>
+    <% produtos.forEach(function (produto) { %>
+        <tr> 
+        <td align="center"> <%= produto.nome %> </td>
+        <td align="center"> <%= produto.preco %> </td>
+            
+        </tr>
+    
+        
+    <% }) %>
+</table>
+
+
+</body>
+</html>
