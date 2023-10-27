@@ -17,13 +17,13 @@ mongoose.connect("mongodb://127.0.0.1:27017/loja", {useNewUrlParser:true, useUni
 
 //inportar a classe service
 import ClientService from './services/ClientService.js'
-import client from './models/Clients.js'
+import OrderService from './services/OrderService.js'
+import ProductService from './services/ProductService.js'
 
 // Define o EJS como Renderizador de páginas
 app.set('view engine', 'ejs')
 
 //Indicando ao express a pasta public para arquivos estáticos
-
 app.use(express.static("public"))
 
 // ROTA PRINCIPAL
@@ -32,6 +32,7 @@ app.get("/",function(req,res){
 })
 
 //rota para clientes
+
 app.get("/clientes",(req,res)=> {
     ClientService.GetAll().then(clients => {
         res.render("clientes", {
@@ -40,7 +41,6 @@ app.get("/clientes",(req,res)=> {
         
     })
 })
-
 
 //Criando Rota do tipo POST
 app.post("/createClient",(req, res) => {
@@ -52,6 +52,42 @@ app.post("/createClient",(req, res) => {
     res.redirect("/clientes")
 })
 
+
+//Rotas para produtos
+app.get("/produtos",(req,res)=>{
+    ProductService.GetAll().then(products=>{
+        res.render("produtos",{
+            products:products
+        })
+    } )
+})
+
+app.post("/createProduct", (req,res) =>{
+    ProductService.Create(
+        req.body.name,
+        req.body.price,
+        req.body.category
+    )
+    res.redirect("/produtos")
+})
+
+//Rotas para Pedidos
+
+app.get("/pedidos",(req,res)=> {
+    OrderService.GetAll().then(orders =>{
+        res.render("pedidos",{
+            orders:orders
+        })
+    })
+})
+
+app.post("/createOrder", (req,res)=>{
+    OrderService.Create(
+        req.body.code,
+        req.body.total
+    )
+    res.redirect("/pedidos")
+})
 
 
 // ROTA CLIENTES

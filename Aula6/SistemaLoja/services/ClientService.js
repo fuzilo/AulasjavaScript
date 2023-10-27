@@ -1,12 +1,8 @@
 import mongoose from "mongoose";
 
-//ver se é case sensitive
-//import client from "..Clients.js"; //Verificar
-
 import client from "../models/Clients.js";
 
 const Client = mongoose.model("Client", client)
-
 class ClientService{
 
     //função de cadastro no banco
@@ -24,6 +20,5 @@ class ClientService{
        return clients 
     }
 }
-
 
 export default new ClientService()
