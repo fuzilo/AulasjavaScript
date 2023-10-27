@@ -1,3 +1,6 @@
+<%- include('partials/header.ejs') %> 
+<%- include('partials/navbar.ejs') %>
+
 <div class="container">
     <div class="card">
         <div class="card-header">
@@ -11,7 +14,7 @@
                 <input type="text" name="cpf" id="cpf" placeholder="Insira o CPF do cliente" class="form-control cpf">
                 
                 <label>Endereço do cliente:</label>
-                <input type="text" name="adress" id="adress" placeholder="Insira o endereço do cliente" class="form-control">
+                <input type="text" name="address" id="address" placeholder="Insira o endereço do cliente" class="form-control">
                 <br>
                 <button class="btn btn-success">Cadastrar</button>
             </form>
@@ -36,11 +39,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% clientes.forEach(cliente => { %>
+                    <% clients.forEach(client => { %>
                      <tr>
-                        <td><%= cliente.nome %></td>
-                        <td><%= cliente.cpf %></td>
-                        <td><%= cliente.endereco %></td>
+                        <td><%= client.name %></td>
+                        <td><%= client.cpf %></td>
+                        <td><%= client.address %></td>
                     </tr>
                     <% }) %>
                 </tbody>

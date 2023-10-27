@@ -1,5 +1,23 @@
 import express from 'express' // Importando o Express
 const app = express() // Iniciando o Express
+//importando o mongoose
+import mongoose from 'mongoose'
+
+//importando o body parser
+import bodyParser from 'body-parser'
+
+//decodifica dados recebidos por formulários
+app.use(bodyParser.urlencoded({extended:false}))
+
+//permite a utilização de dados via json
+app.use(bodyParser.json())
+
+//criando conexão com o banco
+mongoose.connect("mongodb://127.0.0.1:27017/loja", {useNewUrlParser:true, useUnifiedTopology:true}) 
+
+//inportar a classe service
+import ClientService from './services/ClientService.js'
+import client from './models/Clients.js'
 
 // Define o EJS como Renderizador de páginas
 app.set('view engine', 'ejs')
@@ -12,6 +30,29 @@ app.use(express.static("public"))
 app.get("/",function(req,res){
     res.render("index")
 })
+
+//rota para clientes
+app.get("/clientes",(req,res)=> {
+    ClientService.GetAll().then(clients => {
+        res.render("clientes", {
+            clients : clients
+        })
+        
+    })
+})
+
+
+//Criando Rota do tipo POST
+app.post("/createClient",(req, res) => {
+    ClientService.Create(
+        req.body.name,
+        req.body.cpf,
+        req.body.address
+    )
+    res.redirect("/clientes")
+})
+
+
 
 // ROTA CLIENTES
 app.get("/clientes",function(req,res){
